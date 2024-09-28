@@ -1,0 +1,338 @@
+/* CSS Document */
+@charset "utf-8";
+:root {
+    --negro: black;
+    --blanco: white;
+    --rojo: red;
+    --rojoenlaces: rgb(155, 0, 0);
+    --azurecustomized: #eef0fd;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header {
+    text-align: center;
+    background-color: var(--azurecustomized);
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 0fr 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    'vacio1 logo vacio2'
+    'tituloedescricion tituloedescricion tituloedescricion'
+    'navegacion navegacion navegacion'; 
+}
+.vacio1 {
+    grid-area: vacio1;
+}
+.logo {
+    grid-area: logo;
+    width: 35%;
+    margin: 0 auto;
+    padding: 1vh;
+    animation-name: aparecerdesdearriba;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.vacio2 {
+    grid-area: vacio2;
+}
+.tituloedescricion {
+    grid-area: tituloedescricion;
+}
+.tituloedescricion h1 {
+    font-size: 48px;
+    padding: 1vh;
+    animation-name: aparecerdesdelaizquierda;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.tituloedescricion p {
+    padding: 1vh;
+    animation-name: aparecerdesdelaizquierda;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.navegacion {
+    grid-area: navegacion;
+    font-weight: bold;
+    animation-name: aparecerdesdeladerecha;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.navegacion ul {
+    padding: 2vh;
+}
+.navegacion ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+    padding: 7px;
+    border-radius: 5px;
+}
+.navegacion ul li.seleccionado {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.navegacion ul li:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+main {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 40vh;
+    margin-right: 40vh;
+    padding: 3vh;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        'titulopaxina'
+        'sobrenos'
+        'likeecompartir';
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out; 
+}
+.titulopaxina {
+    grid-area: titulopaxina;
+    text-align: center;
+    padding: 4vh;
+}
+.titulopaxina h1 {
+    font-size: 44px;
+}
+.sobrenos {
+    grid-area: sobrenos;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        'texto1 imagen1'
+        'imagen2 texto2'; 
+}
+.texto1 {
+    grid-area: texto1;
+    font-size: 20px;
+    padding: 5vh;
+}
+.texto2 {
+    grid-area: texto2;
+    font-size: 20px;
+    padding: 5vh;
+}
+.imagen1 {
+    grid-area: imagen1;
+    padding: 5vh;
+    animation-name: desvanecer;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.imagen2 {
+    grid-area: imagen2;
+    padding: 5vh;
+    animation-name: desvanecer;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.likeecompartir {
+    grid-area: likeecompartir;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.likeecompartir .hrcurto {
+    width: 20vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.likeecompartir b {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.likeecompartir form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--rojo);
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.likeecompartir form button:hover {
+    border: 2px solid var(--negro);
+    background-color: var(--negro);
+}
+.likeecompartir a, .likeecompartir form, .likeecompartir p {
+    display: inline-block;
+    position: relative;
+    margin: 5px 5px;
+}
+footer {
+    text-align: center;
+    background-color: var(--azurecustomized);
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    'xunta idiomas unioneuropea'
+    'copyright copyright copyright';
+}
+.xunta {
+    grid-area: xunta;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1vh;
+    animation-name: aparecerdesdelaizquierda;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.idiomas {
+    grid-area: idiomas;
+    font-weight: bold;
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.idiomas ul {
+    padding: 2vh;
+}
+.idiomas ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+    padding: 7px;
+    border-radius: 5px;
+}
+.idiomas ul li a {
+    text-decoration: none;
+    color: var(--negro);
+    padding: 7px;
+    border-radius: 5px;
+}
+.idiomas ul li a:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.unioneuropea {
+    grid-area: unioneuropea;
+    width: 25%;
+    margin: 0 auto;
+    padding: 1vh;
+    animation-name: aparecerdesdeladerecha;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.copyright {
+    grid-area: copyright;
+    padding: 2vh;
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes aparecerdesdearriba {
+    from {
+        transform: translate(0vh, -100vh);
+        opacity: 0;
+    } to {
+        transform: translate(0vh, 0vh);
+        opacity: 1;
+    }
+}
+@keyframes aparecerdesdeabajo {
+    from {
+        transform: translate(0vh, 100vh);
+    } to {
+        transform: translate(0vh, 0vh);
+    }
+}
+@keyframes aparecerdesdelaizquierda {
+    from {
+        transform: translate(-100vh, 0vh);
+    } to {
+        transform: translate(0vh, 0vh);
+    }
+}
+@keyframes aparecerdesdeladerecha {
+    from {
+        transform: translate(100vh, 0vh);
+    } to {
+        transform: translate(0vh, 0vh);
+    }
+}
+@keyframes desvanecer {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 1024px) {
+    header {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0fr 0fr 0fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+        'logo'
+        'tituloedescricion'
+        'navegacion'; 
+    }
+    .vacio1, .vacio2 {
+        display: none;
+    }
+    .logo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 80%;
+    }
+    .navegacion ul li {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .navegacion ul li:hover {
+        background-color: var(--rojo);
+        color: var(--blanco);
+    }
+    main {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 1vh;
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0fr 0fr 0fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            'titulopaxina'
+            'sobrenos'
+            'likeecompartir'; 
+    }
+    .titulopaxina {
+        margin: 0px;
+        padding: 0px;
+    }
+    footer {
+        text-align: center;
+        background-color: var(--azurecustomized);
+        display: grid;
+        align-items: center; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0fr 0fr 0fr 0fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            'xunta'
+            'idiomas'
+            'unioneuropea'
+            'copyright';
+    }
+}

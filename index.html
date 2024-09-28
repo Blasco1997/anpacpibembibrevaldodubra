@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de idioma</title>
+    <link rel="stylesheet" type="text/css" href="estilosindexprincipal.css"/>
+</head>
+<body>
+    <main>
+        <section>
+            <button id="galego">Galego</button>
+            <button id="castelan">Castellano</button>
+            <script>
+                let galego = document.getElementById("galego");
+                let castelan = document.getElementById("castelan");
+                galego.addEventListener("click", function(){
+                    window.location.href = "/anpacpibembibrevaldodubra/gl";
+                });
+                castelan.addEventListener("click", function(){
+                    window.location.href = "/anpacpibembibrevaldodubra/es";
+                });
+            </script>
+        </section>
+    </main>
+</body>
+</html>

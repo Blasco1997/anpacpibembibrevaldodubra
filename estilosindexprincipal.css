@@ -1,0 +1,67 @@
+/* CSS Document */
+@charset "utf-8";
+:root {
+    --negro: black;
+    --blanco: white;
+    --rojo: red;
+    --rojoenlaces: rgb(155, 0, 0);
+    --azurecustomized: #eef0fd;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--azurecustomized);
+}
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+section button {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid var(--negro);
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 18px;
+}
+section button#galego {
+    animation-name: aparecerdesdearriba;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+section button#castelan {
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+section button:hover {
+    border: 2px solid var(--rojo);
+    background-color: var(--rojo);
+}
+@keyframes aparecerdesdearriba {
+    from {
+        transform: translate(0vh, -30vh);
+    } to {
+        transform: translate(0vh, 0vh);
+    }
+}
+@keyframes aparecerdesdeabajo {
+    from {
+        transform: translate(0vh, 30vh);
+    } to {
+        transform: translate(0vh, 0vh);
+    }
+}

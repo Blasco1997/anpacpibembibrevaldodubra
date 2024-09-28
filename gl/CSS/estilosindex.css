@@ -1,0 +1,683 @@
+/* CSS Document */
+@charset "utf-8";
+:root {
+    --negro: black;
+    --blanco: white;
+    --rojo: red;
+    --rojoenlaces: rgb(155, 0, 0);
+    --azurecustomized: #eef0fd;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header {
+    text-align: center;
+    background-color: var(--azurecustomized);
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 0fr 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    'vacio1 logo vacio2'
+    'tituloedescricion tituloedescricion tituloedescricion'
+    'navegacion navegacion navegacion'; 
+}
+.vacio1 {
+    grid-area: vacio1;
+}
+.logo {
+    grid-area: logo;
+    width: 35%;
+    margin: 0 auto;
+    padding: 1vh;
+    animation-name: aparecerdesdearriba;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.vacio2 {
+    grid-area: vacio2;
+}
+.tituloedescricion {
+    grid-area: tituloedescricion;
+}
+.tituloedescricion h1 {
+    font-size: 48px;
+    padding: 1vh;
+    animation-name: aparecerdesdelaizquierda;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.tituloedescricion p {
+    padding: 1vh;
+    animation-name: aparecerdesdelaizquierda;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.navegacion {
+    grid-area: navegacion;
+    font-weight: bold;
+    animation-name: aparecerdesdeladerecha;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.navegacion ul {
+    padding: 2vh;
+}
+.navegacion ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+    padding: 7px;
+    border-radius: 5px;
+}
+.navegacion ul li.seleccionado {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.navegacion ul li:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+main {
+    margin: 10px 15vh;
+    padding: 3vh;
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr; 
+    grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        'titulopaxina titulopaxina titulopaxina'
+        'taboleiro1 engadirpublicacion taboleiro2'
+        'taboleiro1 formulariopublicacion taboleiro2'
+        'taboleiro1 blog taboleiro2'
+        'galeria galeria galeria'
+        'likeecompartir likeecompartir likeecompartir'; 
+}
+.titulopaxina {
+    grid-area: titulopaxina;
+    text-align: center;
+    padding: 4vh;
+    animation-name: aparecerdesdelaizquierda;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.titulopaxina h1 {
+    font-size: 44px;
+}
+.taboleiro1 {
+    margin: 10px;
+    padding: 10px;
+    min-width: 40vh;
+    border: 2px solid var(--negro);
+    grid-area: taboleiro1;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0fr 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        'enlacesdeinterese'
+        'anuncio1'
+        'ultimoscomentarios'; 
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.anuncio1 {
+    grid-area: anuncio1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    animation-name: desvanecer;
+    animation-duration: 1s;
+    animation-delay: 6s;
+    animation-timing-function: ease-in-out;
+}
+.enlacesdeinterese {
+    grid-area: enlacesdeinterese;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+.enlacesdeinterese h1 {
+    text-align: center;
+    font-size: 28px;
+}
+.enlacesdeinterese ul {
+    padding: 20px;
+    display: block;
+}
+.enlacesdeinterese ul li {
+    background-color: var(--rojo);
+    color: var(--blanco);
+    padding: 10px;
+    border-radius: 5px;
+    list-style-type: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+.enlacesdeinterese ul li:hover {
+    background-color: var(--negro);
+}
+.ultimoscomentarios {
+    grid-area: ultimoscomentarios;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+.ultimoscomentarios h1 {
+    text-align: center;
+    font-size: 28px;
+}
+.ultimoscomentarios form {
+    padding: 20px;
+}
+.ultimoscomentarios form input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 95%;
+}
+.ultimoscomentarios form textarea {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 95%;
+    height: 200px;
+}
+.ultimoscomentarios form button {
+    align-content: center;
+    font-weight: bold;
+}
+.ultimoscomentarios .paxinascomentarios {
+    text-align: center;
+}
+.ultimoscomentarios .paxinascomentarios a {
+    color: var(--rojoenlaces);
+    text-decoration: none;
+}
+.ultimoscomentarios .paxinascomentarios a:hover {
+    text-decoration: underline;
+}
+.engadirpublicacion {
+    grid-area: engadirpublicacion;
+    text-align: center;
+    margin: 10px;
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.engadirpublicacion button {
+    font-weight: bold;
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.formulariopublicacion {
+    grid-area: formulariopublicacion;
+    border: 2px solid var(--negro);
+    padding: 4vh;
+    display: none;
+}
+.formulariopublicacion .cerrarformulario {
+    text-align: right;
+}
+.formulariopublicacion .cerrarformulario #close {
+    opacity: 0.5;
+}
+.formulariopublicacion .cerrarformulario #close:hover {
+    opacity: 1;
+}
+.formulariopublicacion form input {
+    width: 97.25%;
+    padding: 10px;
+}
+.formulariopublicacion form textarea {
+    width: 100%;
+    height: 300px;
+}
+.formulariopublicacion form button {
+    font-weight: bold;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.blog {
+    grid-area: blog;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        'artigos'
+        'paxinasblog';
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.artigos {
+    grid-area: artigos;
+}
+.artigos article h1 {
+    padding: 10px;
+}
+.artigos article p a {
+    color: var(--rojoenlaces);
+    text-decoration: none;
+}
+.artigos article p a:hover {
+    text-decoration: underline;
+}
+.artigos article p button:hover {
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+.paxinasblog {
+    grid-area: paxinasblog;
+    border: 2px solid var(--negro);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.paxinasblog .estasaqui {
+    text-decoration: none;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    font-weight: bold;
+}
+.paxinasblog a {
+    text-decoration: none;
+    padding: 7px;
+    border-radius: 5px;
+    color: var(--negro);
+    font-weight: bold;
+}
+.paxinasblog a:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.blog article {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid var(--negro);
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0fr 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        'tituloentrada tituloentrada'
+        'descricionentrada imaxeentrada'
+        '. datapublicacion'; 
+}
+.tituloentrada {
+    grid-area: tituloentrada;
+    font-size: 36px;
+    text-align: center;
+}
+.descricionentrada {
+    grid-area: descricionentrada;
+    padding: 10px;
+}
+.descricionentrada button {
+    padding: 7px;
+    border-radius: 5px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    font-weight: bold;
+}
+.imaxeentrada {
+    grid-area: imaxeentrada;
+    padding: 10px;
+    width: 90%;
+}
+.datapublicacion {
+    grid-area: datapublicacion;
+    font-size: 16px;
+    padding: 10px;
+    text-align: right;
+}
+.taboleiro2 {
+    margin: 10px;
+    padding: 10px;
+    min-width: 40vh;
+    border: 2px solid var(--negro);
+    grid-area: taboleiro2;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas:
+        'calendario'
+        'anuncio2';
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.anuncio2 {
+    grid-area: anuncio2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.calendario {
+    grid-area: calendario;
+    text-align: center;
+    background-color: var(--azurecustomized);
+    margin: 10px 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button {
+    background-color: var(--rojo);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: var(--negro);
+}
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+th, td {
+    padding: 10px 5px;
+    text-align: center;
+}
+td {
+    height: auto;
+    width: auto;
+}
+td:hover {
+    background-color: var(--azurecustomized);
+    cursor: pointer;
+}
+.current-day {
+    background-color: var(--rojo);
+    color: var(--blanco);
+    border-radius: 50%;
+}
+.galeria {
+    grid-area: galeria;
+    border: 2px solid var(--negro);
+    width: 98.75%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.galeria h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.galeria .sector img {
+    width: 100%;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.prev {
+    left: 0;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.likeecompartir {
+    grid-area: likeecompartir;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.likeecompartir .hrcurto {
+    width: 20vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.likeecompartir b {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.likeecompartir a, .likeecompartir form, .likeecompartir p {
+    display: inline-block;
+    position: relative;
+    margin: 5px 5px;
+}
+footer {
+    text-align: center;
+    background-color: var(--azurecustomized);
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 0fr 0fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    'xunta idiomas unioneuropea'
+    'copyright copyright copyright';
+}
+.xunta {
+    grid-area: xunta;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1vh;
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.idiomas {
+    grid-area: idiomas;
+    font-weight: bold;
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.idiomas ul {
+    padding: 2vh;
+}
+.idiomas ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+    padding: 7px;
+    border-radius: 5px;
+}
+.idiomas ul li a {
+    text-decoration: none;
+    color: var(--negro);
+    padding: 7px;
+    border-radius: 5px;
+}
+.idiomas ul li a:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.unioneuropea {
+    grid-area: unioneuropea;
+    width: 25%;
+    margin: 0 auto;
+    padding: 1vh;
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.copyright {
+    grid-area: copyright;
+    padding: 2vh;
+    animation-name: aparecerdesdeabajo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+@keyframes aparecerdesdearriba {
+    from {
+        transform: translate(0vh, -100vh);
+        opacity: 0;
+    } to {
+        transform: translate(0vh, 0vh);
+        opacity: 1;
+    }
+}
+@keyframes aparecerdesdeabajo {
+    from {
+        transform: translate(0vh, 100vh);
+    } to {
+        transform: translate(0vh, 0vh);
+    }
+}
+@keyframes aparecerdesdelaizquierda {
+    from {
+        transform: translate(-100vh, 0vh);
+    } to {
+        transform: translate(0vh, 0vh);
+    }
+}
+@keyframes aparecerdesdeladerecha {
+    from {
+        transform: translate(100vh, 0vh);
+    } to {
+        transform: translate(0vh, 0vh);
+    }
+}
+@keyframes desvanecer {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 1024px) {
+    header {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0fr 0fr 0fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+        'logo'
+        'tituloedescricion'
+        'navegacion'; 
+    }
+    .vacio1, .vacio2 {
+        display: none;
+    }
+    .logo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 80%;
+    }
+    .navegacion ul li {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .navegacion ul li:hover {
+        background-color: var(--rojo);
+        color: var(--blanco);
+    }
+    main {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 1vh;
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            'titulopaxina'
+            'taboleiro1'
+            'blog'
+            'taboleiro2'
+            'galeria'
+            'likeecompartir'; 
+    }
+    .titulopaxina {
+        margin: 0px;
+        padding: 0px;
+    }
+    .taboleiro1, .taboleiro2 {
+        margin: 0px;
+        padding: 0px;
+    }
+    .blog {
+        margin: 0px;
+        padding: 0px;
+    }
+    .calendario {
+        padding: 1px;
+    }
+    .galeria {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    footer {
+        text-align: center;
+        background-color: var(--azurecustomized);
+        display: grid;
+        align-items: center; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0fr 0fr 0fr 0fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            'xunta'
+            'idiomas'
+            'unioneuropea'
+            'copyright';
+    }
+}
